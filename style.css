@@ -1,0 +1,99 @@
+:root{--bg:#eceef1;--surf:#fff;--ink:#12263a;--mut:#5a6b7c;--acc:#d62828;--acc2:#f2b705;--line:#cfd6dd;--hd:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--bd:'IBM Plex Sans',system-ui,Arial,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a2b;--surf:#16263c;--ink:#e8edf3;--mut:#9fb0c2;--line:#2a3d56;--acc:#ff5252}}
+:root[data-theme="dark"]{--bg:#0e1a2b;--surf:#16263c;--ink:#e8edf3;--mut:#9fb0c2;--line:#2a3d56;--acc:#ff5252}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--bd)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+a{color:inherit}
+h1,h2,h3{font-family:var(--hd);line-height:1;margin:0}
+h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800}
+.ramadhan_wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.ramadhan_section{padding:72px 0}
+.ramadhan_sub{color:var(--mut);max-width:60ch;margin:10px 0 28px}
+#ramadhan_header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.ramadhan_bar{display:flex;align-items:center;gap:14px;height:64px}
+.ramadhan_logo{font:800 1.6rem var(--hd);text-decoration:none;letter-spacing:.5px}
+.ramadhan_logo b{color:var(--acc)}
+.ramadhan_menu{display:flex;gap:4px;margin-left:auto}
+.ramadhan_menu a{padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:500;font-size:.95rem}
+.ramadhan_menu a:hover,.ramadhan_menu a.ramadhan_aktif{background:var(--surf);color:var(--acc)}
+.ramadhan_btn{border:0;cursor:pointer;font:600 .95rem var(--bd);padding:11px 18px;border-radius:10px;background:var(--acc);color:#fff;text-decoration:none;display:inline-block}
+.ramadhan_btn:hover{filter:brightness(1.1)}
+.ramadhan_btn_ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.ramadhan_ikon{width:42px;height:42px;padding:0;border-radius:10px;background:var(--surf);color:var(--ink);border:1px solid var(--line);cursor:pointer;font-size:1.1rem;position:relative}
+.ramadhan_badge{position:absolute;top:-6px;right:-6px;background:var(--acc);color:#fff;border-radius:99px;font:600 .7rem var(--bd);min-width:20px;height:20px;line-height:20px}
+#ramadhan_burger{display:none}
+:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+
+#ramadhan_beranda{padding:56px 0 72px;overflow:hidden}
+.ramadhan_hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.ramadhan_hero h1{font-size:clamp(3rem,9vw,6.4rem);font-weight:800;text-transform:uppercase;letter-spacing:-1px}
+.ramadhan_hero h1 span{display:block;-webkit-text-stroke:2px var(--ink);color:transparent}
+.ramadhan_cari{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:26px;display:grid;gap:10px;grid-template-columns:1fr auto}
+.ramadhan_cari label{grid-column:1/-1;font-weight:600}
+select,input,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%}
+.ramadhan_gear{width:100%;max-width:440px;margin:auto;display:block;color:var(--ink)}
+.ramadhan_stat{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
+.ramadhan_stat div{font-size:.9rem;color:var(--mut)}.ramadhan_stat b{display:block;font:800 1.9rem var(--hd);color:var(--ink)}
+
+.ramadhan_tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.ramadhan_tools input{max-width:280px}
+.ramadhan_chip{border:1.5px solid var(--line);background:var(--surf);color:var(--ink);border-radius:99px;padding:8px 16px;cursor:pointer;font:500 .9rem var(--bd)}
+.ramadhan_chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ramadhan_grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.ramadhan_card{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.ramadhan_card:hover{border-color:var(--acc)}
+.ramadhan_foto{height:110px;border-radius:12px;display:grid;place-items:center;font-size:3.4rem;background:repeating-linear-gradient(135deg,var(--bg) 0 10px,transparent 10px 20px)}
+.ramadhan_card h3{font-size:1.4rem}
+.ramadhan_harga{font:800 1.5rem var(--hd);color:var(--acc)}
+.ramadhan_kecil{font-size:.82rem;color:var(--mut)}
+.ramadhan_card .ramadhan_btn{margin-top:auto}
+.ramadhan_kosong{padding:30px;text-align:center;color:var(--mut);grid-column:1/-1}
+
+#ramadhan_promo .ramadhan_box{background:var(--ink);color:var(--bg);border-radius:24px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+#ramadhan_promo h2{color:var(--acc2)}
+.ramadhan_timer{display:flex;gap:10px}
+.ramadhan_timer div{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 8px;text-align:center;flex:1;font-size:.75rem}
+.ramadhan_timer b{display:block;font:800 2.2rem var(--hd)}
+.ramadhan_kode{display:flex;gap:8px;margin-top:16px}
+.ramadhan_kode code{flex:1;border:2px dashed var(--acc2);border-radius:10px;padding:10px 14px;font:600 1.1rem var(--bd);letter-spacing:2px}
+
+.ramadhan_dua{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.ramadhan_langkah{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+.ramadhan_langkah li{counter-increment:s;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 62px;position:relative}
+.ramadhan_langkah li::before{content:counter(s);position:absolute;left:14px;top:12px;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font:800 1.2rem var(--hd)}
+
+.ramadhan_testi{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-bottom:34px}
+.ramadhan_testi blockquote{flex:0 0 min(320px,82%);scroll-snap-align:start;margin:0;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:18px}
+.ramadhan_testi cite{display:block;margin-top:8px;font-weight:600;font-style:normal}
+details{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--mut)}
+
+.ramadhan_form{display:grid;gap:12px}
+.ramadhan_form small{color:var(--acc);min-height:1em;display:block}
+.ramadhan_info{display:grid;gap:12px}
+.ramadhan_info div{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+#ramadhan_footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mut);font-size:.9rem;text-align:center}
+
+#ramadhan_laci{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--surf);z-index:80;transform:translateX(105%);transition:transform .3s;display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));border-left:1px solid var(--line)}
+#ramadhan_laci.ramadhan_buka{transform:none}
+.ramadhan_item{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ramadhan_qty{display:flex;gap:6px;align-items:center}
+.ramadhan_qty button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+#ramadhan_isi{flex:1;overflow:auto}
+#ramadhan_toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,150%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:99px;z-index:90;transition:transform .25s;font-weight:500}
+#ramadhan_toast.ramadhan_tampil{transform:translate(-50%,0)}
+@media(max-width:980px){
+ #ramadhan_burger{display:block;margin-left:auto}
+ .ramadhan_menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:10px 20px 16px;border-bottom:1px solid var(--line);margin:0}
+ .ramadhan_menu.ramadhan_buka{display:flex}
+ .ramadhan_hero,.ramadhan_dua,#ramadhan_promo .ramadhan_box{grid-template-columns:1fr}
+ #ramadhan_promo .ramadhan_box{padding:26px}
+ .ramadhan_gear{max-width:260px}
+ .ramadhan_section{padding:52px 0}
+ .ramadhan_cari{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+a.ramadhan_card{text-decoration:none;color:inherit}
