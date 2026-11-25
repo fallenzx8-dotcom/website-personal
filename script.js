@@ -5,7 +5,7 @@ document.body.insertAdjacentHTML("beforeend",`<footer id="ramadhan_footer"><div 
 <aside id="ramadhan_laci" aria-label="Keranjang"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="font-size:2rem">Keranjang</h2><button class="ramadhan_ikon" id="ramadhan_tutup" aria-label="Tutup keranjang">✕</button></div><div id="ramadhan_isi"></div><div style="padding-top:12px"><div style="display:flex;justify-content:space-between;font-weight:600;margin-bottom:10px"><span>Total</span><span id="ramadhan_total">Rp0</span></div><a class="ramadhan_btn" id="ramadhan_wa" style="display:block;text-align:center" target="_blank" rel="noopener" href="#">Pesan via WhatsApp</a></div></aside>
 <div id="ramadhan_toast" role="status"></div>`)})();
 
-var WA="6281234567890";
+var WA="6282123819020";
 var P=[
 {n:"Kampas rem depan",c:"Pengereman",b:["Honda","Yamaha"],h:45000,e:"🛑"},
 {n:"Kampas rem belakang",c:"Pengereman",b:["Honda","Yamaha","Suzuki"],h:38000,e:"🛑"},
@@ -36,7 +36,7 @@ function drawCart(){
  $("ramadhan_isi").innerHTML=ids.length?ids.map(function(i){var p=P[i],q=cart[i];tot+=p.h*q;jml+=q;return '<div class="ramadhan_item"><b>'+p.n+'</b><span>'+rp(p.h*q)+'</span><div class="ramadhan_qty"><button data-m="'+i+'" aria-label="Kurangi">−</button>'+q+'<button data-p="'+i+'" aria-label="Tambah">+</button></div></div>'}).join(""):'<p class="ramadhan_kecil" style="padding:20px 0">Keranjang masih kosong. Pilih part dari katalog.</p>';
  $("ramadhan_total").textContent=rp(tot);$("ramadhan_jml").textContent=jml;
  var t="Halo Xenn Motor Parts, saya mau pesan:%0A"+ids.map(function(i){return "- "+P[i].n+" x"+cart[i]}).join("%0A")+"%0ATotal: "+rp(tot);
- $("ramadhan_wa").href="https://wa.me/082123819020"+WA+"?text="+(ids.length?t:"Halo, saya mau tanya sparepart");
+ $("ramadhan_wa").href="https://wa.me/"+WA+"?text="+(ids.length?t:"Halo, saya mau tanya sparepart");
  try{localStorage.setItem("ramadhan_cart",JSON.stringify(cart))}catch(e){}}
 document.addEventListener("click",function(e){
  var t=e.target.closest("button");if(!t)return;var d=t.dataset;
@@ -70,6 +70,6 @@ $("ramadhan_form").onsubmit=function(e){e.preventDefault();
  f.forEach(function(x){var el=$(x[0]),v=el.value.trim(),g=x[1](v);el.nextElementSibling.textContent=g?"":x[2];if(!g)ok=false});
  if(!ok)return;
  var m="Nama: "+$("ramadhan_nama").value+"%0AEmail: "+$("ramadhan_email").value+"%0A"+encodeURIComponent($("ramadhan_pesan").value);
- window.open("https://wa.me/082123819020"+WA+"?text="+m,"_blank");this.reset();toast("Pesan terkirim. Kami balas segera.")};
+ window.open("https://wa.me/"+WA+"?text="+m,"_blank");this.reset();toast("Pesan terkirim. Kami balas segera.")};
 var qp=new URLSearchParams(location.search).get("merek");if(qp){st.brand=qp;$("ramadhan_merek").value=qp}
 chips();grid();drawCart();
