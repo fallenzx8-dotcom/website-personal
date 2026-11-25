@@ -70,6 +70,6 @@ $("ramadhan_form").onsubmit=function(e){e.preventDefault();
  f.forEach(function(x){var el=$(x[0]),v=el.value.trim(),g=x[1](v);el.nextElementSibling.textContent=g?"":x[2];if(!g)ok=false});
  if(!ok)return;
  var m="Nama: "+$("ramadhan_nama").value+"%0AEmail: "+$("ramadhan_email").value+"%0A"+encodeURIComponent($("ramadhan_pesan").value);
- window.open("https://wa.me/"+WA+"?text="+m,"_blank");this.reset();toast("Pesan terkirim. Kami balas segera.")};
+ window.open("https://wa.me/082123819020"+WA+"?text="+m,"_blank");this.reset();toast("Pesan terkirim. Kami balas segera.")};
 var qp=new URLSearchParams(location.search).get("merek");if(qp){st.brand=qp;$("ramadhan_merek").value=qp}
 chips();grid();drawCart();
