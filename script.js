@@ -36,7 +36,7 @@ function drawCart(){
  $("ramadhan_isi").innerHTML=ids.length?ids.map(function(i){var p=P[i],q=cart[i];tot+=p.h*q;jml+=q;return '<div class="ramadhan_item"><b>'+p.n+'</b><span>'+rp(p.h*q)+'</span><div class="ramadhan_qty"><button data-m="'+i+'" aria-label="Kurangi">−</button>'+q+'<button data-p="'+i+'" aria-label="Tambah">+</button></div></div>'}).join(""):'<p class="ramadhan_kecil" style="padding:20px 0">Keranjang masih kosong. Pilih part dari katalog.</p>';
  $("ramadhan_total").textContent=rp(tot);$("ramadhan_jml").textContent=jml;
  var t="Halo Xenn Motor Parts, saya mau pesan:%0A"+ids.map(function(i){return "- "+P[i].n+" x"+cart[i]}).join("%0A")+"%0ATotal: "+rp(tot);
- $("ramadhan_wa").href="https://wa.me/"+WA+"?text="+(ids.length?t:"Halo, saya mau tanya sparepart");
+ $("ramadhan_wa").href="https://wa.me/082123819020"+WA+"?text="+(ids.length?t:"Halo, saya mau tanya sparepart");
  try{localStorage.setItem("ramadhan_cart",JSON.stringify(cart))}catch(e){}}
 document.addEventListener("click",function(e){
  var t=e.target.closest("button");if(!t)return;var d=t.dataset;
